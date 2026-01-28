@@ -1,9 +1,17 @@
+import { Link } from "react-router-dom";
+import "./FundraiserCard.css";
+
 function FundraiserCard(props) {
+    const { fundraiserData} = props;
+
     return (
-        <div>
-            <h2>{props.data.title}</h2>
+        <div className="fundraiser-card">
+            <Link to="/fundraiser">
+                <img src={fundraiserData.image} alt={fundraiserData.title} />
+                <h3>{fundraiserData.title}</h3>
+            </Link>
         </div>
-    )
+    );
 }
 
 export default FundraiserCard;

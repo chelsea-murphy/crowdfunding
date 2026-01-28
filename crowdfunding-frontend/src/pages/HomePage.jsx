@@ -1,10 +1,12 @@
 import { allFundraisers } from "../data.js";
-import FundraiserCard from "../components/FundraiserCard.jsx";
+import FundraiserCard from "../components/FundraiserCard";
+import "./HomePage.css";
+
 function HomePage() {
     return (
-        <div>
+        <div id="fundraiser-list">
             {allFundraisers.map((fundraiserData, key) => {
-            return <FundraiserCard key={key} data ={fundraiserData} />;
+                return <FundraiserCard key={key} fundraiserData={fundraiserData} />;
             })}
         </div>
     );
