@@ -10,7 +10,7 @@ import './components/Layout.css'
 import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import AccountPage from './pages/AccountPage.jsx'
-
+import PledgePage from './pages/PledgePage.jsx'
 import NavBar from "./components/NavBar.jsx";
 
 const myRouter = createBrowserRouter([
@@ -23,6 +23,7 @@ const myRouter = createBrowserRouter([
       {path: "/register", element: <RegisterPage /> },
       {path: "/account", element: <AccountPage /> },
       {path: "/fundraiser/:id", element: <FundraiserPage /> },
+      {path: "/fundraiser/:id/pledge", element: <PledgePage /> },
       {path: "/aboutpage", element: <AboutPage /> },
       {path: "/contactpage", element: <ContactPage /> },
     ],
