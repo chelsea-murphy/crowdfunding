@@ -7,8 +7,9 @@ import FundraiserPage from './pages/FundraiserPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import './components/Layout.css'
-import LoginPage from './pages/LoginPage.jsx';
+import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
+import AccountPage from './pages/AccountPage.jsx'
 
 import NavBar from "./components/NavBar.jsx";
 
@@ -19,7 +20,8 @@ const myRouter = createBrowserRouter([
     children: [
       {path: "/", element: <HomePage /> },
       {path: "/login", element: <LoginPage /> },
-      {path: "/register", element: <RegisterPage /> }, // Add this
+      {path: "/register", element: <RegisterPage /> },
+      {path: "/account", element: <AccountPage /> },
       {path: "/fundraiser/:id", element: <FundraiserPage /> },
       {path: "/aboutpage", element: <AboutPage /> },
       {path: "/contactpage", element: <ContactPage /> },

@@ -1,0 +1,28 @@
+.user-avatar {
+    background: linear-gradient(135deg, #FFA800 0%, #ff8f00 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.user-avatar.small {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.user-avatar.medium {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+.user-avatar.large {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+}

@@ -36,6 +36,7 @@ function Layout() {
                 <li><Link to="/aboutpage" className="nav-link">About</Link></li>
                 <li><Link to="/contactpage" className="nav-link">Contact</Link></li>
                 <li><Link to="/login" className="nav-link">Login</Link></li>
+                <li><Link to="/account" className="nav-link">My Account</Link></li>
               </ul>
               <Link to="/start-fundraiser" className="btn btn-primary">Start a Fundraiser</Link>
             </nav>
