@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import './components/Layout.css'
 import LoginPage from './pages/LoginPage.jsx';
+import RegisterPage from './pages/RegisterPage.jsx'
 
 import NavBar from "./components/NavBar.jsx";
 
@@ -15,14 +16,17 @@ const myRouter = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children: [{path: "/", element: <HomePage /> },
+    children: [
+      {path: "/", element: <HomePage /> },
       {path: "/login", element: <LoginPage /> },
+      {path: "/register", element: <RegisterPage /> }, // Add this
       {path: "/fundraiser/:id", element: <FundraiserPage /> },
       {path: "/aboutpage", element: <AboutPage /> },
       {path: "/contactpage", element: <ContactPage /> },
     ],
   },
 ]);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={myRouter} />
