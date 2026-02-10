@@ -5,6 +5,33 @@ import './Layout.css';
 
 function Layout() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+
+    // Check if user is logged in on component mount
+    useEffect(() => {
+      const checkLoginStatus = () => {
+        const token = window.localStorage.getItem("token");
+        setIsLoggedIn(!!token);
+      };
+
+      checkLoginStatus();
+
+      // Listen for storage changes
+      window.addEventListener('storage', checkLoginStatus);
+
+      return () => {
+        window.removeEventListener('storage', checkLoginStatus);
+      };
+    }, []);
+
+    const handleLogout = () => {
+      window.localStorage.removeItem("token");
+      setIsLoggedIn(false);
+      setMobileMenuOpen(false);
+      navigate("/");
+  };
+
 
   return (
     <div className="app-layout">
@@ -13,7 +40,7 @@ function Layout() {
         <div className="container">
           <div className="nav-wrapper">
             <div className="logo">
-              <Link to="/" aria-label="Home">
+              <Link to="/">
                 <img src="/bookbank.png" alt="Book Bank Logo" className="logo-image" />
               </Link>
             </div>
@@ -21,8 +48,6 @@ function Layout() {
             <button 
               className="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
-              aria-expanded={mobileMenuOpen}
             >
               <span className="hamburger"></span>
               <span className="hamburger"></span>
@@ -35,10 +60,23 @@ function Layout() {
                 <li><Link to="/fundraisers" className="nav-link">Fundraisers</Link></li>
                 <li><Link to="/aboutpage" className="nav-link">About</Link></li>
                 <li><Link to="/contactpage" className="nav-link">Contact</Link></li>
-                <li><Link to="/login" className="nav-link">Login</Link></li>
-                <li><Link to="/account" className="nav-link">My Account</Link></li>
+
+                {/* Show different links based on login status */}
+                {isLoggedIn ? (
+                  <li><Link to="/account" className="nav-link">My Account</Link></li>
+                ) : (
+                  <li><Link to="/login" className="nav-link">Login</Link></li>
+                )}
               </ul>
-              <Link to="/start-fundraiser" className="btn btn-primary">Start a Fundraiser</Link>
+
+              {/* Show different buttons based on login status */}
+              {isLoggedIn ? (
+                <button onClick={handleLogout} className="btn btn-secondary">
+                  Logout
+                </button>
+              ) : (
+                <Link to="/start-fundraiser" className="btn btn-primary">Start a Fundraiser</Link>
+              )}
             </nav>
           </div>
         </div>
