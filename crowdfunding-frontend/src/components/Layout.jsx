@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 //import NavBar from "./NavBar";
 import './Layout.css';
 
@@ -31,7 +31,6 @@ function Layout() {
       setMobileMenuOpen(false);
       navigate("/");
   };
-
 
   return (
     <div className="app-layout">
@@ -84,7 +83,7 @@ function Layout() {
 
       {/* Main Content Area - where child routes render */}
       <main>
-        <Outlet />
+        <Outlet context={{ setIsLoggedIn }} />
       </main>
 
       {/* Footer */}
