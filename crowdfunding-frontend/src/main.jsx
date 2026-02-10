@@ -4,6 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import FundraiserPage from './pages/FundraiserPage'
+import FundraisersListPage from './pages/FundraisersListPage.jsx'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import './components/Layout.css'
@@ -12,6 +13,7 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import AccountPage from './pages/AccountPage.jsx'
 import PledgePage from './pages/PledgePage.jsx'
 import NavBar from "./components/NavBar.jsx";
+
 
 const myRouter = createBrowserRouter([
   {
