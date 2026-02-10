@@ -10,8 +10,16 @@ function HomePage() {
     return (
         <div className="homepage">
             {/* Hero Section */}
-        <section className="hero">
-            <div className="container">
+            <section className="hero">
+                <div className="hero-image-wrapper">
+                    <img 
+                    src="/img/BookBankHero.png" 
+                    alt="Book Bank Hero" 
+                    className="hero-background-image"
+                    />
+                <div className="hero-overlay"></div>
+            </div>
+            <div className="container hero-content">
                 <h1 className="hero-title">Every story starts with a book</h1>
                 <p className="hero-subtitle">Turning pages into possibilities</p>
                 <div className="hero-actions">
@@ -21,7 +29,7 @@ function HomePage() {
             </div>
         </section>
 
-      {/* Featured Fundraisers */}
+        {/* Featured Fundraisers */}
         <section className="featured-section">
             <div className="container">
                 <h2 className="section-title">Featured Fundraisers</h2>

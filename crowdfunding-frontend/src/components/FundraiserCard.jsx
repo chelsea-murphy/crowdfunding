@@ -5,10 +5,19 @@ function FundraiserCard(props) {
     const { fundraiserData } = props;
     const fundraiserLink = `/fundraiser/${fundraiserData.id}`;
 
+    const totalRaised = fundraiserData.total_raised ?? 0;
+
     // Calculate progress percentage
     const progressPercentage = fundraiserData.goal 
         ? (fundraiserData.total_raised / fundraiserData.goal) * 100
         : 0;
+
+    // Truncate cards with long descriptions
+    const truncateText = (text, maxLength = 100) => {
+    if (!text) return '';
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+};
 
     return (
         <div className="fundraiser-card">
@@ -23,7 +32,9 @@ function FundraiserCard(props) {
                     />
                     <div className="fundraiser-content">
                         <h3 className="fundraiser-title">{fundraiserData.title}</h3>
-                        <p className="fundraiser-description">{fundraiserData.description}</p>
+                        <p className="fundraiser-description">
+                            {truncateText(fundraiserData.description, 300)}
+                        </p>
                     
                     {/* Progress bar - come back to this!*/}
                     <div className="progress-bar">
@@ -37,7 +48,7 @@ function FundraiserCard(props) {
                         ></div>
                     </div>
                     <p className="fundraiser-stats">
-                        ${fundraiserData.current_amount} raised of ${fundraiserData.goal_amount} goal
+                        ${totalRaised.toFixed(2)} raised of ${fundraiserData.goal || 0} goal
                     </p>
                 </div>
             </Link>
