@@ -62,7 +62,7 @@
 .form-group input:focus {
   outline: none;
   border-color: #8b7dde;
-  box-shadow: 0 0 0 3px rgba(255, 168, 0, 0.1);
+  box-shadow: 0 0 0 3px rgba(139, 125, 222, 0.1);
 }
 
 .form-group input::placeholder {
@@ -86,7 +86,7 @@
 .login-button:hover {
   background-color: #7b68ee;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 168, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(139, 125, 222, 0.3);
 }
 
 .login-button:active {

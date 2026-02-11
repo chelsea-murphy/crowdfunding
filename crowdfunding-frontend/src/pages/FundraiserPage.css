@@ -75,7 +75,7 @@
 
 /* Goal */
 .fundraiser-goal {
-    background: linear-gradient(135deg, #fff5e6 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #e8e5f5 0%, #ffffff 100%);
     padding: 1.5rem;
     border-radius: 8px;
     border: 2px solid #7b68ee;
@@ -165,7 +165,7 @@
 .pledge-amount {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #FFA800;
+    color: #8b7dde;
     flex-shrink: 0;
 }
 

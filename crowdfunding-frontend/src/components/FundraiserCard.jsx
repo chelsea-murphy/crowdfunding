@@ -48,7 +48,7 @@ function FundraiserCard(props) {
                         ></div>
                     </div>
                     <p className="fundraiser-stats">
-                        ${totalRaised.toFixed(2)} raised of ${fundraiserData.goal || 0} goal
+                        ${totalRaised.toFixed(0)} raised of ${fundraiserData.goal || 0} goal
                     </p>
                 </div>
             </Link>

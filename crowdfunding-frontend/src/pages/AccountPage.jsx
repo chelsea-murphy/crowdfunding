@@ -41,11 +41,6 @@ function AccountPage() {
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
 
-    const handleLogout = () => {
-        window.localStorage.removeItem("token");
-        navigate("/");
-    };
-
     if (isLoading) {
         return (
             <div className="account-page">
@@ -88,9 +83,6 @@ function AccountPage() {
                         Member since {formatDate(userData.date_joined)}
                     </p>
                 </div>
-                <button onClick={handleLogout} className="btn btn-secondary logout-btn">
-                    Logout
-                </button>
             </section>
 
             {/* User Stats */}
@@ -105,7 +97,7 @@ function AccountPage() {
                 </div>
                 <div className="stat-card">
                     <h3 className="stat-number">
-                        ${userData.pledges.reduce((sum, pledge) => sum + parseFloat(pledge.amount || 0), 0).toFixed(2)}
+                        ${userData.pledges.reduce((sum, pledge) => sum + parseFloat(pledge.amount || 0), 0).toFixed(0)}
                     </h3>
                     <p className="stat-label">Total Pledged</p>
                 </div>
