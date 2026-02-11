@@ -116,7 +116,7 @@ function AccountPage() {
                         {userData.pledges.map((pledge) => (
                             <div key={pledge.id} className="pledge-card">
                                 <div className="pledge-info">
-                                    <h3 className="pledge-fundraiser">Fundraiser #{pledge.fundraiser}</h3>
+                                    <h3 className="pledge-fundraiser">{pledge.fundraiser_title || `Fundraiser #{pledge.fundraiser}`}</h3>
                                     <p className="pledge-comment">{pledge.comment || 'No comment'}</p>
                                     <p className="pledge-date">
                                         Pledged on {formatDate(pledge.date_created)}

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import postRegister from "../api/post-register.js";
 import postLogin from "../api/post-login.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 function RegisterForm() {
     const navigateTo = useNavigate();
+    const { setIsLoggedIn } = useOutletContext();
 
     const [formData, setFormData] = useState({
         username: "",
@@ -63,9 +64,11 @@ function RegisterForm() {
             // Automatically log them in
             const loginResponse = await postLogin(formData.username, formData.password);
             window.localStorage.setItem("token", loginResponse.token);
+            window.localStorage.setItem("userId", loginResponse.user_id);
+            setIsLoggedIn(true);
     
             // Redirect to home
-            navigateTo("/");
+            navigateTo("/account");
         } catch (error) {
             setErrors({ general: error.message || "Registration failed. Please try again." });
         } finally {
@@ -110,7 +113,7 @@ function RegisterForm() {
             <input
                 type="text"
                 id="firstName"
-                placeholder="First name (optional)"
+                placeholder="First name"
                 value={formData.firstName}
                 onChange={handleChange}
                 disabled={isLoading}
@@ -122,7 +125,7 @@ function RegisterForm() {
             <input
                 type="text"
                 id="lastName"
-                placeholder="Last name (optional)"
+                placeholder="Last name"
                 value={formData.lastName}
                 onChange={handleChange}
                 disabled={isLoading}
@@ -140,6 +143,7 @@ function RegisterForm() {
                 disabled={isLoading}
             />
             {errors.password && <span className="field-error">{errors.password}</span>}
+            <p className="field-help">Password must be at least 8 characters long and not too common</p>
         </div>
 
         <div className="form-group">

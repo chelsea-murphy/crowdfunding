@@ -1,0 +1,80 @@
+.toggle-fundraiser-status {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    margin: 2rem 0;
+}
+
+.status-info {
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.status-badge.status-open {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge.status-closed {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.status-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.toggle-button {
+    width: auto;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.toggle-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-close {
+    background-color: #c62828;
+    color: white;
+}
+
+.btn-close:hover:not(:disabled) {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.btn-open {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.btn-open:hover:not(:disabled) {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+
+.toggle-error {
+    color: #c33;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+}

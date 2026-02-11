@@ -44,6 +44,17 @@
     color: #c62828;
 }
 
+.owner-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.edit-button {
+    align-self: flex-start;
+}
+
 /* Fundraiser Image */
 .fundraiser-detail-image {
     width: 100%;
@@ -194,5 +205,9 @@
 
     .pledge-amount {
         align-self: flex-end;
+    }
+
+    .edit-button {
+        width: 100%;
     }
 }

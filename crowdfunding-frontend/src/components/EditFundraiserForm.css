@@ -1,0 +1,112 @@
+.edit-fundraiser-form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid #8b7dde;
+  margin: 2rem 0;
+}
+
+.edit-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #003087;
+  margin-bottom: 1.5rem;
+}
+
+.edit-fundraiser-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.edit-fundraiser-form .form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.edit-fundraiser-form input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.edit-fundraiser-form input:focus {
+    outline: none;
+    border-color: #8b7dde;
+    box-shadow: 0 0 0 3px rgba(139, 125, 222, 0.1);
+}
+
+.edit-fundraiser-form input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.field-help {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.25rem;
+}
+
+.image-preview {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+}
+
+.preview-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.image-preview img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.form-actions .btn {
+    padding: 0.75rem 1.5rem;
+    min-width: 120px;
+}
+
+.error-message {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    border-radius: 6px;
+    padding: 0.875rem;
+    color: #c33;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .edit-fundraiser-form {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}

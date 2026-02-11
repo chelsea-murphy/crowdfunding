@@ -24,9 +24,11 @@ function LoginForm() {
         event.preventDefault();
         if (credentials.username && credentials.password) {
             postLogin(credentials.username, credentials.password).then((response) => {
-                console.log(response.token);
+                console.log("Login response:", response);
                 window.localStorage.setItem("token", response.token);
+                window.localStorage.setItem("userId", response.user_id);
                 setIsLoggedIn(true);
+                console.log("About to navigate to /account");
                 navigateTo("/account");
         });
     }
