@@ -41,7 +41,7 @@ body {
 }
 
 .logo-image {
-  height: 150px;
+  height: 70px;
   width: auto;
   display: block;
 }
@@ -93,12 +93,12 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #FFA800;
+  color: #8b7dde;
   outline: 2px solid transparent;
 }
 
 .nav-link:focus-visible {
-  outline: 2px solid #FFA800;
+  outline: 2px solid #8b7dde;
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -117,31 +117,31 @@ body {
 }
 
 .btn:focus-visible {
-  outline: 3px solid #FFA800;
+  outline: 3px solid #8b7dde;
   outline-offset: 2px;
 }
 
 .btn-primary {
-  background-color: #FFA800;
+  background-color: #8b7dde;
   color: #ffffff;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #e69500;
+  background-color: #8b7dde;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(255, 168, 0, 0.3);
 }
 
 .btn-secondary {
   background-color: #ffffff;
-  color: #FFA800;
-  border: 2px solid #FFA800;
+  color: #8b7dde;
+  border: 2px solid #8b7dde;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background-color: #FFA800;
+  background-color: #8b7dde;
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -166,7 +166,7 @@ body {
 }
 
 .footer-title {
-  color: #FFA800;
+  color: #003087;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
@@ -193,7 +193,7 @@ body {
 
 .footer-links a:hover,
 .footer-links a:focus {
-  color: #FFA800;
+  color: #8b7dde;
 }
 
 .footer-bottom {

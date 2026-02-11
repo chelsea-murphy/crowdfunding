@@ -20,8 +20,14 @@ function HomePage() {
                 <div className="hero-overlay"></div>
             </div>
             <div className="container hero-content">
-                <h1 className="hero-title">Every story starts with a book</h1>
-                <p className="hero-subtitle">Turning pages into possibilities</p>
+                <h1 className="hero-title">Every Story Starts With a Book</h1>
+                <p className="hero-subtitle">Empowering literacy, one fundraiser at a time</p>
+            </div>
+        </section>
+
+        {/* CTA Section - Moved below hero */}
+        <section className="cta-section">
+            <div className="container">
                 <div className="hero-actions">
                     <Link to="/fundraisers" className="btn btn-primary btn-large">Browse Fundraisers</Link>
                     <Link to="/start-fundraiser" className="btn btn-secondary btn-large">Start Your Campaign</Link>
@@ -35,8 +41,8 @@ function HomePage() {
                 <h2 className="section-title">Featured Fundraisers</h2>
                 <div id="fundraiser-list">
                     {fundraisers.map((fundraiserData, key) => {
-                        return <FundraiserCard key={key} fundraiserData={fundraiserData} />;
-                    })}
+                    return <FundraiserCard key={key} fundraiserData={fundraiserData} />;
+                        })}
                 </div>
             </div>
         </section>

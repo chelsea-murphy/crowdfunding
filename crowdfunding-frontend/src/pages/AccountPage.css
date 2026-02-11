@@ -62,7 +62,7 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FFA800;
+    color: #8b7dde;
     margin-bottom: 0.5rem;
 }
 
@@ -148,7 +148,7 @@
 .pledge-amount .amount {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #FFA800;
+    color: #8b7dde;
 }
 
 .public-badge {

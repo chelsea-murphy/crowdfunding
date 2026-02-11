@@ -26,7 +26,7 @@
 }
 
 .fundraiser-card a:focus {
-  outline: 2px solid #FFA800;
+  outline: 2px solid #8b7dde;
   outline-offset: 2px;
 }
 
@@ -76,7 +76,7 @@
 
 .progress-fill {
   height: 100%;
-  background-color: #FFA800;
+  background-color: #8b7dde;
   transition: width 0.3s ease;
 }
 

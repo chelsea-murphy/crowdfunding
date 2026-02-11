@@ -78,14 +78,14 @@
     background: linear-gradient(135deg, #fff5e6 0%, #ffffff 100%);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 2px solid #FFA800;
+    border: 2px solid #7b68ee;
     margin-bottom: 2rem;
     text-align: center;
 }
 
 .fundraiser-goal h3 {
     font-size: 1.75rem;
-    color: #FFA800;
+    color: #8b7dde;
     font-weight: 700;
     margin: 0;
 }

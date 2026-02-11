@@ -40,7 +40,7 @@ function Layout() {
           <div className="nav-wrapper">
             <div className="logo">
               <Link to="/">
-                <img src="/bookbank.png" alt="Book Bank Logo" className="logo-image" />
+                <img src="/BookBankFullLogo_Transparent_NoBuffer.png" alt="Book Bank Logo" className="logo-image" />
               </Link>
             </div>
             
