@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import AccountPage from './pages/AccountPage.jsx'
 import PledgePage from './pages/PledgePage.jsx'
+import CreateFundraiserPage from './pages/CreateFundraiserPage.jsx'
 import NavBar from "./components/NavBar.jsx";
 
 
@@ -27,6 +28,7 @@ const myRouter = createBrowserRouter([
       {path: "/account", element: <AccountPage /> },
       {path: "/fundraiser/:id", element: <FundraiserPage /> },
       {path: "/fundraiser/:id/pledge", element: <PledgePage /> },
+      {path: "/start-fundraiser", element: <CreateFundraiserPage /> }, 
       {path: "/aboutpage", element: <AboutPage /> },
       {path: "/contactpage", element: <ContactPage /> },
     ],

@@ -1,0 +1,181 @@
+.fundraiser-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003087;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b7dde;
+    box-shadow: 0 0 0 3px rgba(139, 125, 222, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.field-help {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.25rem;
+}
+
+.field-error {
+    color: #c33;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.error-message {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    border-radius: 6px;
+    padding: 0.875rem;
+    color: #c33;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Amount Input */
+.amount-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #666;
+}
+
+.amount-input-wrapper input {
+    padding-left: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.preview-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.image-preview img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 1.25rem;
+    background-color: #8b7dde;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #7b68ee;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 125, 222, 0.3);
+}
+
+.submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-button:focus-visible {
+    outline: 3px solid #8b7dde;
+    outline-offset: 2px;
+}
+
+/* Form Disclaimer */
+.form-disclaimer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .fundraiser-form {
+        padding: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.75rem;
+    }
+
+    .form-subtitle {
+        font-size: 1rem;
+    }
+}
