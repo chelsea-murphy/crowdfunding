@@ -147,7 +147,7 @@ function FundraiserPage() {
                                     <li key={key} className="pledge-item">
                                         <div className="pledge-info">
                                             <span className="pledge-supporter">
-                                                {pledgeData.anonymous ? 'Anonymous' : pledgeData.supporter}
+                                                {pledgeData.anonymous ? 'Anonymous' : (pledgeData.supporter_name || pledgeData.supporter)}
                                             </span>
                                             {pledgeData.comment && (
                                                 <p className="pledge-comment">"{pledgeData.comment}"</p>
