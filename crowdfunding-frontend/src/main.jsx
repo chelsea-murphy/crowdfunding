@@ -7,12 +7,13 @@ import FundraiserPage from './pages/FundraiserPage'
 import FundraisersListPage from './pages/FundraisersListPage.jsx'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
-import './components/Layout.css'
 import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import AccountPage from './pages/AccountPage.jsx'
 import PledgePage from './pages/PledgePage.jsx'
 import CreateFundraiserPage from './pages/CreateFundraiserPage.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
+import './components/Layout.css'
 import NavBar from "./components/NavBar.jsx";
 
 
@@ -31,6 +32,7 @@ const myRouter = createBrowserRouter([
       {path: "/start-fundraiser", element: <CreateFundraiserPage /> }, 
       {path: "/aboutpage", element: <AboutPage /> },
       {path: "/contactpage", element: <ContactPage /> },
+      {path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
