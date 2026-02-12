@@ -15,7 +15,14 @@ function FundraisersListPage() {
         
                 <div id="fundraiser-list">
                     {fundraisers.map((fundraiserData, key) => {
-                        return <FundraiserCard key={key} fundraiserData={fundraiserData} />;
+                        return (
+                            <div key={key} className="fundraiser-card-wrapper">
+                                <FundraiserCard fundraiserData={fundraiserData} />
+                                {!fundraiserData.is_open && (
+                                    <div className="status-badge status-closed">Closed</div>
+                                )}
+                            </div>
+                        );
                     })}
                 </div>
             </div>

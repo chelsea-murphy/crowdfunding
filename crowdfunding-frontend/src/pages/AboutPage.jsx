@@ -1,21 +1,60 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
 
 function AboutPage() {
     return (
         <div className="AboutPage">
-        {/* Hero Section */}
-            <section className="hero">
-        <div className="container">
-            <h1 className="hero-title">Book Bank</h1>
-                <p className="hero-subtitle">Book Bank is a crowdfunding platform dedicated exclusively to improving literacy outcomes</p>
-                <p className="paragraph">The platform connects donors who are passionate about education with individuals, schools, and community organisations seeking funding for books, reading programs, and literacy initiatives. Unlike general crowdfunding sites, Book Bank focuses solely on literacy, creating a trusted space where every campaign directly impacts someone's ability to read, learn, and thrive. Inspired by Roald Dahl's Matilda, the platform features verified campaigns, transparent fund tracking, and impact reporting that shows donors exactly how their contributions made a difference. Campaign creators can promote specific campaigns, fund adult literacy courses, or launch community reading programs. Donors can browse by cause, making it easy to support causes that resonate personally. Book Bank rallies the community celebrating milestones with each funded campaign, sharing stories of transformation and progress. Literacy isn't just an academic skill — it's a human right and a tool for freedom. It empowers people to understand the world, imagine a better one, and have the voice to help create it.</p> 
-                    <div className="hero-actions">
-                        <Link to="/fundraisers" className="btn btn-primary btn-large">Browse Fundraisers</Link>
-                        <Link to="/start-fundraiser" className="btn btn-secondary btn-large">Start Your Campaign</Link>
-                </div>
-            </div>
-            </section>
+            {/* Hero Section with Image */}
+                <section className="hero">
+                    <div className="hero-image-wrapper">
+                        <img 
+                            src="/img/friends-with-books-reading-7.png" 
+                            alt="Book Bank Hero" 
+                            className="hero-background-image"
+                        />
+                        <div className="hero-overlay"></div>
+                    </div>
+                    <div className="container hero-content">
+                        <h1 className="hero-title">About Book Bank</h1>
+                        <p className="hero-subtitle">
+                            Empowering literacy through community-driven fundraising
+                        </p>
+                    </div>
+                </section>
+
+                {/* Mission Section */}
+                <section className="content-section">
+                        <div className="container">
+                            <h2 className="section-heading">Our Mission</h2>
+                            <p className="paragraph">
+                                Book Bank is dedicated to making literacy accessible to everyone. We believe that every 
+                                person deserves access to books and reading materials, regardless of their circumstances. 
+                                Through our platform, communities can come together to fund literacy initiatives, support 
+                                schools, and help individuals discover the transformative power of reading.
+                            </p>
+
+                            <h2 className="section-heading">Our Story</h2>
+                            <p className="paragraph">
+                                Inspired by Roald Dahl's beloved character Matilda, who found solace and strength in 
+                                books, Book Bank was founded on the principle that reading changes lives. We've seen 
+                                firsthand how access to books can open doors, spark imaginations, and create opportunities.
+                            </p>
+                            <p className="paragraph">
+                                What started as a small community project has grown into a movement. Today, thousands 
+                                of people use Book Bank to support literacy initiatives in their communities and beyond.
+                            </p>
+
+                            <div className="hero-actions">
+                                    <Link to="/fundraisers" className="btn btn-primary btn-large">
+                                        Browse Fundraisers
+                                    </Link>
+                                    <Link to="/start-fundraiser" className="btn btn-secondary btn-large">
+                                        Start Your Campaign
+                                    </Link>
+                            </div>
+                        </div>
+                </section>
         </div>
     );
 }

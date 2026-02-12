@@ -7,6 +7,11 @@ import "./HomePage.css";
 function HomePage() {
     const { fundraisers } = useFundraisers();
 
+
+    const openFundraisers = fundraisers
+        .filter(fundraiser => fundraiser.is_open)
+        .slice(0, 9);
+
     return (
         <div className="homepage">
             {/* Hero Section */}
@@ -39,11 +44,30 @@ function HomePage() {
         <section className="featured-section">
             <div className="container">
                 <h2 className="section-title">Featured Fundraisers</h2>
-                <div id="fundraiser-list">
-                    {fundraisers.map((fundraiserData, key) => {
-                    return <FundraiserCard key={key} fundraiserData={fundraiserData} />;
-                        })}
-                </div>
+                
+                {openFundraisers.length === 0 ? (
+                    <div className="no-fundraisers">
+                        <p>No active fundraisers at the moment. Be the first to create one!</p>
+                        <Link to="/start-fundraiser" className="btn btn-primary">Start a Fundraiser</Link>
+                    </div>
+                ) : (
+                    <>
+                        <div id="fundraiser-list">
+                            {openFundraisers.map((fundraiserData, key) => {
+                                return <FundraiserCard key={key} fundraiserData={fundraiserData} />;
+                            })}
+                        </div>
+                    
+                        {/* See More button - only show if there are more than 9 open fundraisers */}
+                        {fundraisers.filter(f => f.is_open).length > 9 && (
+                            <div className="see-more-container">
+                                <Link to="/fundraisers" className="btn btn-secondary btn-large">
+                                    See More Fundraisers
+                                </Link>
+                            </div>
+                        )}
+                    </>
+                )}
             </div>
         </section>
     </div>

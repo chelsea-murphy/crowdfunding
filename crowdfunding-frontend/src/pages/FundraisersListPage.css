@@ -33,3 +33,54 @@
     font-weight: 600;
     font-size: 1.1rem;
 }
+
+#fundraiser-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.fundraiser-card-wrapper {
+    position: relative;
+}
+
+.fundraiser-card-wrapper .status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-closed {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    #fundraiser-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fundraisers-list-page {
+        padding: 2rem 0;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    #fundraiser-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,31 +1,82 @@
 .AboutPage {
   min-height: 70vh;
-  padding: 3rem 0;
 }
 
+/* Hero Section with Image */
 .hero {
-  background: linear-gradient(135deg, #e8e5f5 0%, #ffffff 100%);
-  padding: 4rem 0;
-  border-radius: 8px;
-  margin-bottom: 3rem;
+  position: relative;
+  padding: 8rem 0;
+  text-align: center;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #003087 0%, #8b7dde 100%);
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.3;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 26, 77, 0.7) 0%, rgba(123, 104, 238, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #003087;
+  color: #ffffff;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  color: #666;
-  margin-bottom: 2rem;
-  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+}
+
+/* Content Section */
+.content-section {
+  padding: 4rem 0;
+  background: #ffffff;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #003087;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.section-heading:first-child {
+  margin-top: 0;
 }
 
 .paragraph {
@@ -36,7 +87,6 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  text-align: left;
 }
 
 .hero-actions {
@@ -44,17 +94,14 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .AboutPage {
-    padding: 2rem 0;
-  }
-
   .hero {
-    padding: 3rem 1.5rem;
+    padding: 5rem 0;
+    min-height: 400px;
   }
 
   .hero-title {
@@ -62,7 +109,11 @@
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
   }
 
   .paragraph {
