@@ -38,13 +38,17 @@ function FundraiserPage() {
     }
 
     if (error) {
-        return (
-            <div className="fundraiser-page">
-                <div className="container">
-                    <p className="error-message">{error.message}</p>
-                </div>
-            </div>
-        );
+        // Check if it's a permission error
+        if (error.message?.includes("403") || error.message?.includes("Forbidden")) {
+            throw new Response("You don't have permission to view this fundraiser", { 
+                status: 403 
+            });
+        }
+        
+        // Otherwise treat as 404
+        throw new Response(error.message || "Fundraiser not found", { 
+            status: 404 
+        });
     }
 
     const displayData = fundraiserData || fundraiser;

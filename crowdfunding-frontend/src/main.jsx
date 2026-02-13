@@ -12,6 +12,7 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import AccountPage from './pages/AccountPage.jsx'
 import PledgePage from './pages/PledgePage.jsx'
 import CreateFundraiserPage from './pages/CreateFundraiserPage.jsx'
+import ErrorPage from './pages/ErrorPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import './components/Layout.css'
 import NavBar from "./components/NavBar.jsx";
@@ -21,6 +22,7 @@ const myRouter = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    //errorElement: <ErrorPage />, 
     children: [
       {path: "/", element: <HomePage /> },
       {path: "/fundraisers", element: <FundraisersListPage /> }, 

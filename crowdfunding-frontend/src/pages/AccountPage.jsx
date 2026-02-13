@@ -52,13 +52,9 @@ function AccountPage() {
     }
 
     if (error) {
-        return (
-            <div className="account-page">
-                <div className="container">
-                    <div className="error-message">{error}</div>
-                </div>
-            </div>
-        );
+        throw new Response(error || "Unable to load account", {
+            status: 401
+        });
     }
 
     return (
@@ -109,26 +105,33 @@ function AccountPage() {
                 {userData.pledges.length === 0 ? (
                     <div className="empty-state">
                         <p>Ready to make your first pledge?</p>
-                        <Link to="/" className="btn btn-primary">Browse Fundraisers</Link>
+                        <Link to="/fundraisers" className="btn btn-primary">Browse Fundraisers</Link>
                     </div>
                 ) : (
-                    <div className="pledge-list">
-                        {userData.pledges.map((pledge) => (
-                            <div key={pledge.id} className="pledge-card">
-                                <div className="pledge-info">
-                                    <h3 className="pledge-fundraiser">{pledge.fundraiser_title || `Fundraiser #{pledge.fundraiser}`}</h3>
-                                    <p className="pledge-comment">{pledge.comment || 'No comment'}</p>
-                                    <p className="pledge-date">
-                                        Pledged on {formatDate(pledge.date_created)}
-                                    </p>
+                    <>
+                        <div className="pledge-list">
+                            {userData.pledges.map((pledge) => (
+                                <div key={pledge.id} className="pledge-card">
+                                    <div className="pledge-info">
+                                        <h3 className="pledge-fundraiser">{pledge.fundraiser_title || `Fundraiser #{pledge.fundraiser}`}</h3>
+                                        <p className="pledge-comment">{pledge.comment || 'No comment'}</p>
+                                        <p className="pledge-date">
+                                            Pledged on {formatDate(pledge.date_created)}
+                                        </p>
+                                    </div>
+                                    <div className="pledge-amount">
+                                        <span className="amount">${pledge.amount}</span>
+                                        {!pledge.anonymous && <span className="public-badge">Public</span>}
+                                    </div>
                                 </div>
-                                <div className="pledge-amount">
-                                    <span className="amount">${pledge.amount}</span>
-                                    {!pledge.anonymous && <span className="public-badge">Public</span>}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                        <div className="section-cta">
+                            <Link to="/fundraisers" className="btn btn-secondary">
+                                Browse More Fundraisers
+                            </Link>
+                        </div>
+                    </>
                 )}
             </section>
 
@@ -137,39 +140,70 @@ function AccountPage() {
                 <h2 className="section-title">My Fundraisers</h2>
                 {userData.fundraisers.length === 0 ? (
                     <div className="empty-state">
-                        <p>Ready to create your first fundraise?</p>
+                        <p>Ready to create your first fundraiser?</p>
                         <Link to="/start-fundraiser" className="btn btn-primary">Start a Fundraiser</Link>
                     </div>
                 ) : (
+                    <>
                     <div className="fundraiser-grid">
-                        {userData.fundraisers.map((fundraiser) => (
-                            <Link 
-                                key={fundraiser.id} 
-                                to={`/fundraiser/${fundraiser.id}`}
-                                className="account-fundraiser-card"
-                            >
-                                <img 
-                                    src={fundraiser.image} 
-                                    alt={fundraiser.title}
-                                    className="fundraiser-image"
-                                />
-                                <div className="fundraiser-content">
-                                    <h3 className="fundraiser-title">{fundraiser.title}</h3>
-                                    <div className="fundraiser-stats-small">
-                                        <span className={fundraiser.is_open ? 'status-open' : 'status-closed'}>
-                                            {fundraiser.is_open ? 'Active' : 'Closed'}
-                                        </span>
-                                        <span className="goal">${fundraiser.goal}</span>
+                        {userData.fundraisers.map((fundraiser) => {
+                            // Calculate progress for each fundraiser
+                            const totalRaised = fundraiser.total_raised || 0;
+                            const progressPercentage = fundraiser.goal 
+                                ? (totalRaised / fundraiser.goal) * 100
+                                : 0;
+
+                            return (
+                                <Link 
+                                    key={fundraiser.id} 
+                                    to={`/fundraiser/${fundraiser.id}`}
+                                    className="account-fundraiser-card"
+                                >
+                                    <img 
+                                        src={fundraiser.image} 
+                                        alt={fundraiser.title}
+                                        className="fundraiser-image"
+                                    />
+                                    <div className="fundraiser-content">
+                                        <h3 className="fundraiser-title">{fundraiser.title}</h3>
+                                        
+                                        {/* Progress Bar */}
+                                        <div className="progress-bar">
+                                            <div 
+                                                className="progress-fill" 
+                                                style={{width: `${Math.min(progressPercentage, 100)}%`}} 
+                                                role="progressbar" 
+                                                aria-valuenow={progressPercentage} 
+                                                aria-valuemin="0" 
+                                                aria-valuemax="100"
+                                            ></div>
+                                        </div>
+                                        
+                                        <p className="fundraiser-stats">
+                                            ${totalRaised.toFixed(0)} raised of ${fundraiser.goal} goal
+                                        </p>
+                                        
+                                        <div className="fundraiser-stats-small">
+                                            <span className={fundraiser.is_open ? 'status-open' : 'status-closed'}>
+                                                {fundraiser.is_open ? 'Active' : 'Closed'}
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                        ))}
+                                </Link>
+                            );
+                        })}
                     </div>
+                    <div className="section-cta">
+                        <Link to="/start-fundraiser" className="btn btn-secondary">
+                            Create Another Fundraiser
+                        </Link>
+                    </div>
+                </>
                 )}
             </section>
         </div>
     </div>
-    );
+);
 }
 
 export default AccountPage;

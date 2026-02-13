@@ -18,6 +18,102 @@
     text-align: center;
 }
 
+/* Search Container */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-size: 1.1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #8b7dde;
+    box-shadow: 0 0 0 4px rgba(139, 125, 222, 0.1);
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    pointer-events: none;
+}
+
+/* Results Info */
+.results-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    min-height: 1.5rem;
+}
+
+.results-text {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Fundraiser Grid */
+#fundraiser-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.fundraiser-card-wrapper {
+    position: relative;
+}
+
+/* Status badge - matches FundraiserPage styling */
+.fundraiser-card-wrapper .status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-closed {
+    background: #ffebee;
+    color: #c62828;
+}
+
 .closed-message {
     background: #ffebee;
     border: 2px solid #c62828;
@@ -69,6 +165,10 @@
     #fundraiser-list {
         grid-template-columns: repeat(2, 1fr);
     }
+    .search-container {
+        max-width: 100%;
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -82,5 +182,10 @@
 
     #fundraiser-list {
         grid-template-columns: 1fr;
+    }
+
+    .search-input {
+        padding: 0.875rem 3rem 0.875rem 1.25rem;
+        font-size: 1rem;
     }
 }
