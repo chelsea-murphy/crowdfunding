@@ -133,12 +133,11 @@ function FundraiserPage() {
                     </div>
                 )}
 
-                {/* Pledges List */}
-                <div className="pledges-section">
-                    <h3 className="section-title">
-                        Pledges ({fundraiser.pledges.length})
-                    </h3>
-                    
+                    {/* Pledges List */}
+                    <div className="pledges-section">
+                        <h3 className="section-title">
+                            Pledges ({fundraiser.pledges.length})
+                        </h3>
                         {fundraiser.pledges.length === 0 ? (
                             <p className="no-pledges">No pledges yet. Be the first to support this fundraiser!</p>
                         ) : (
