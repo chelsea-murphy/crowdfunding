@@ -38,18 +38,28 @@ function FundraiserPage() {
     }
 
     if (error) {
-        // Check if it's a permission error
-        if (error.message?.includes("403") || error.message?.includes("Forbidden")) {
-            throw new Response("You don't have permission to view this fundraiser", { 
-                status: 403 
-            });
-        }
-        
-        // Otherwise treat as 404
-        throw new Response(error.message || "Fundraiser not found", { 
-            status: 404 
-        });
-    }
+        return (
+            <div className="fundraiser-page">
+                <div className="container">
+                    <div className="error-container">
+                        <div className="error-emoji">📚</div>
+                        <h1 className="error-title">Fundraiser Not Found</h1>
+                        <p className="error-message">
+                            {error.message || "This fundraiser doesn't exist or may have been removed."}
+                        </p>
+                        <div className="error-actions">
+                            <Link to="/fundraisers" className="btn btn-primary">
+                                Browse Fundraisers
+                            </Link>
+                            <Link to="/" className="btn btn-secondary">
+                                Back to Home
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    );
+}
 
     const displayData = fundraiserData || fundraiser;
     const currentIsOpen = isOpen !== null ? isOpen : fundraiser.is_open;
