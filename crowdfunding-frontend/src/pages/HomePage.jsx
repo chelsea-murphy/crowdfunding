@@ -15,19 +15,12 @@ function HomePage() {
     return (
         <div className="homepage">
             {/* Hero Section */}
-            <section className="hero">
-                <div className="hero-image-wrapper">
-                    <img 
-                    src="/img/BookBankHero.png" 
-                    alt="Book Bank Hero" 
-                    className="hero-background-image"
-                    />
+            <section className="hero" style={{backgroundImage: `url(/img/BookBankHero.png)`}}>
                 <div className="hero-overlay"></div>
-            </div>
-            <div className="container hero-content">
-                <h1 className="hero-title">Every Story Starts With a Book</h1>
-                <p className="hero-subtitle">Empowering literacy, one fundraiser at a time</p>
-            </div>
+                <div className="container hero-content">
+                    <h1 className="hero-title">Every Story Starts With a Book</h1>
+                    <p className="hero-subtitle">Empowering literacy, one fundraiser at a time</p>
+                </div>
         </section>
 
         {/* CTA Section - Moved below hero */}

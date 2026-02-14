@@ -7,21 +7,14 @@ function AboutPage() {
         <div className="AboutPage">
             {/* Hero Section with Image */}
                 <section className="hero">
-                    <div className="hero-image-wrapper">
-                        <img 
-                            src="/img/friends-with-books-reading-7.png" 
-                            alt="Book Bank Hero" 
-                            className="hero-background-image"
-                        />
-                        <div className="hero-overlay"></div>
-                    </div>
+                    <div className="hero-overlay"></div>
                     <div className="container hero-content">
                         <h1 className="hero-title">About Book Bank</h1>
                         <p className="hero-subtitle">
                             Empowering literacy through community-driven fundraising
                         </p>
                     </div>
-                </section>
+            </section>
 
                 {/* Mission Section */}
                 <section className="content-section">
