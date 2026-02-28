@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "../../../django/crowdfunding_back_end"
+			"path": "../../django/crowdfunding_back_end"
 		}
 	],
 	"settings": {}
