@@ -106,23 +106,23 @@ return (
             )}
 
             <div className="form-actions">
-                <button 
-                    type="button" 
-                    onClick={onCancel} 
-                    className="btn btn-secondary"
-                    disabled={isUpdating}
-                >
-                    Cancel
-                </button>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                    disabled={isUpdating}
-                >
-                    {isUpdating ? 'Saving...' : 'Save Changes'}
-                </button>
-                </div>
-            </form>
+            <button 
+                type="button" 
+                onClick={onCancel} 
+                className="btn btn-secondary"
+                disabled={isUpdating}
+            >
+                Cancel
+            </button>
+            <button 
+                type="submit" 
+                className="btn btn-primary"
+                disabled={isUpdating}
+            >
+                {isUpdating ? 'Saving...' : 'Save Changes'}
+            </button>
+            </div>
+        </form>
         </div>
     );
 }
